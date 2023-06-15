@@ -1,2 +1,2 @@
-declare module 'leancloud-storage'
+// declare module 'leancloud-storage'
 declare module 'color'

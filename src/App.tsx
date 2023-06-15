@@ -38,8 +38,8 @@ const ZeroRoutes = () => {
             }
           />
           <Route path={'/project'} element={<Project />} />
-          <Route path={'/book'} element={<Book />} />
-          <Route path={'/inspiration'} element={<Inspiration />} />
+          {/* <Route path={'/book'} element={<Book />} /> */}
+          {/* <Route path={'/inspiration'} element={<Inspiration />} /> */}
           <Route path={'/friend'} element={<Friend />} />
           <Route path={'/about'} element={<About />} />
           <Route path={'/post/:num'} element={<Post />} />

@@ -16,7 +16,7 @@ type PanelProps = {
 }
 
 const Panel: React.FC<PanelProps> = ({ likeSite, likeCount, list, theme, togglePanle, toggleTheme, handleLike }) => {
-  const likeContent = likeSite ? `${likeCount} 位旅行者见证种子的发芽` : `${likeCount} 位旅行者带来故事的种子`
+  // const likeContent = likeSite ? `${likeCount} 位旅行者见证种子的发芽` : `${likeCount} 位旅行者带来故事的种子`
 
   return (
     <div className={styles.panel}>
@@ -28,7 +28,7 @@ const Panel: React.FC<PanelProps> = ({ likeSite, likeCount, list, theme, toggleP
             <div></div>
           </div>
           <div className={styles.content}>
-            <div className={styles.head}>画笔，臣服于我！</div>
+            <div className={styles.head}>主题选择</div>
             <ul className={styles.body}>
               {list.map((t) => {
                 return (
@@ -50,7 +50,7 @@ const Panel: React.FC<PanelProps> = ({ likeSite, likeCount, list, theme, toggleP
               })}
             </ul>
             <div className={styles.foot}>
-              <div className={styles.like} data-title={likeContent} onClick={handleLike}></div>
+              {/* <div className={styles.like} data-title={likeContent} onClick={handleLike}></div> */}
             </div>
           </div>
           <div className={styles['long-line']}>

@@ -4,7 +4,7 @@ import { queryIssueByLabel } from '@utils/service'
 import { formatPage } from '@/utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
-import Comment from '@/components/Comment'
+// import Comment from '@/components/Comment'
 import { External } from '@components/Icons'
 
 type ProjectProps = {}
@@ -45,7 +45,7 @@ const Project: React.FC<ProjectProps> = () => {
               )
             })}
           </div>
-          <Comment title="项目" />
+          {/* <Comment title="项目" /> */}
         </div>
       ) : (
         <Loading />

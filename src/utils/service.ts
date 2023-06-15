@@ -3,7 +3,7 @@ import { Cloud, Issue, QueryParams, IssueLabel, Hot } from '@/type'
 import config from '@/config'
 
 const GITHUB_API = 'https://api.github.com/repos'
-const CLOUD_API = 'https://v0.yiketianqi.com/free/day?unescape=1&version=v61&appid=53266342&appsecret=mB1eOBjO'
+const CLOUD_API = ''
 
 const { username, repository, token } = config.github
 const blog = `${GITHUB_API}/${username}/${repository}`

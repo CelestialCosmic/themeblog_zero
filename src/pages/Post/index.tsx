@@ -6,7 +6,7 @@ import { formatIssue } from '@utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
-import Comment from '@/components/Comment'
+// import Comment from '@/components/Comment'
 import { Calendar, Bookmark, Tag, Eye } from '@components/Icons'
 
 type PostParams = {
@@ -68,7 +68,7 @@ const Post: React.FC<PostProps> = () => {
             </div>
           </div>
           <Markdown content={issue?.body ?? ''} />
-          <Comment title={issue?.title as string} />
+          {/* <Comment title={issue?.title as string} /> */}
         </div>
       )}
     </div>

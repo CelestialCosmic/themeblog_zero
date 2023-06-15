@@ -26,28 +26,16 @@ import {
   Butterfly,
 } from '@components/Icons'
 import config from '@/config'
-import Hutao from '@/assets/images/hutao.jpg'
-import Keqing from '@/assets/images/keqing.jpg'
-import Ganyu from '@/assets/images/ganyu.jpg'
-import Beelzebul from '@/assets/images/beelzebul.jpg'
-import Ayaka from '@/assets/images/ayaka.jpg'
-import Yoimiya from '@/assets/images/yoimiya.jpg'
-import Kokomi from '@/assets/images/kokomi.jpg'
-import Nahida from '@/assets/images/nahida.jpg'
+import ririwhite from '@assets/images/white.jpg'
+import ririblack from '@assets/images/iblack.jpg'
 
-const { github, twitter, telegram, email, music, blog } = config.contact
+const { github, telegram} = config.contact
 
 type SideProps = {}
 
 const list: Theme[] = [
-  { type: 'Hutao', name: '雪霁梅香', color: '#903F36', image: Hutao },
-  { type: 'Keqing', name: '霆霓快雨', color: '#8D83A3', image: Keqing },
-  { type: 'Ganyu', name: '循循守月', color: '#5260A6', image: Ganyu },
-  { type: 'Beelzebul', name: '一心净土', color: '#9F87C2', image: Beelzebul },
-  { type: 'Ayaka', name: '白鹭霜华', color: '#7A8FB7', image: Ayaka },
-  { type: 'Yoimiya', name: '琉焰华舞', color: '#BC5039', image: Yoimiya },
-  { type: 'Kokomi', name: '真珠之智', color: '#BF9997', image: Kokomi },
-  { type: 'Nahida', name: '白草净华', color: '#9DBB92', image: Nahida },
+  { type: 'white', name: '莉莉白', color: '#BDC0BA', image: 'white' },
+  { type: 'black', name: '莉莉黑', color: '#080808', image: 'black' }
 ]
 const randomTheme = list[random(0, list.length)]
 
@@ -114,7 +102,7 @@ const Side: React.FC<SideProps> = () => {
           <Link className={clsx(pathname === '/' && 'active')} to="/" data-name="首页">
             <Home />
           </Link>
-          <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration" data-name="灵感">
+          {/* <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration" data-name="灵感">
             <Message />
           </Link>
           <Link className={clsx(pathname === '/project' && 'active')} to="/project" data-name="项目">
@@ -122,7 +110,7 @@ const Side: React.FC<SideProps> = () => {
           </Link>
           <Link className={clsx(pathname === '/book' && 'active')} to="/book" data-name="书单">
             <Book />
-          </Link>
+          </Link> */}
           <Link className={clsx(pathname === '/friend' && 'active')} to="/friend" data-name="友邻">
             <Heart />
           </Link>
@@ -131,36 +119,36 @@ const Side: React.FC<SideProps> = () => {
           </Link>
         </nav>
         <div className="head flex flex-col justify-end pl-3 pb-3 w-2/3">
-          <h3 className="title text-6xl tracking-wider">蟬時雨</h3>
-          <span className="subtitle pt-2 pb-8 pl-1 text-xl tracking-wider">蝉鸣如雨 花宵道中</span>
-          <Poetry />
+          <h3 className="title text-6xl tracking-wider">繁星集</h3>
+          <span className="subtitle pt-2 pb-8 pl-1 text-xl tracking-wider">Celestial的杂货间</span>
+          {/* <Poetry /> */}
         </div>
       </div>
 
       {/* footer menu */}
       <div className="flex justify-end py-12">
-        <div className="nya" data-name="時与风" onClick={togglePanle}>
+        <div className="nya" data-name="莉莉白" onClick={togglePanle}>
           <Butterfly />
         </div>
         <div className="nav nav-x flex items-center w-2/3 h-12 ">
           <a href={github} rel="noopener noreferrer" target="_blank">
             <Github />
           </a>
-          <a href={twitter} rel="noopener noreferrer" target="_blank">
+          {/* <a href={twitter} rel="noopener noreferrer" target="_blank">
             <Twitter />
-          </a>
+          </a> */}
           <a href={telegram} rel="noopener noreferrer" target="_blank">
             <Telegram />
           </a>
-          <a href={email} rel="noopener noreferrer" target="_blank">
+          {/* <a href={email} rel="noopener noreferrer" target="_blank">
             <Mail />
-          </a>
-          <a href={music} rel="noopener noreferrer" target="_blank">
+          </a> */}
+          {/* <a href={music} rel="noopener noreferrer" target="_blank">
             <Music />
-          </a>
-          <a href={blog} rel="noopener noreferrer" target="_blank">
+          </a> */}
+          {/* <a href={blog} rel="noopener noreferrer" target="_blank">
             <Moon />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

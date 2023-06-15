@@ -5,7 +5,7 @@ import { queryIssueByLabel } from '@utils/service'
 import { formatPage } from '@/utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
-import Comment from '@/components/Comment'
+// import Comment from '@/components/Comment'
 import styles from './index.module.css'
 
 type BookProps = {}
@@ -70,7 +70,7 @@ const Book: React.FC<BookProps> = () => {
               )
             })}
           </div>
-          <Comment title="书单" />
+          {/* <Comment title="书单" /> */}
         </div>
       ) : (
         <Loading />

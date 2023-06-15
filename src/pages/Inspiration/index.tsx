@@ -7,7 +7,7 @@ import { queryInspiration } from '@utils/service'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
-import Comment from '@/components/Comment'
+// import Comment from '@/components/Comment'
 import styles from './index.module.css'
 
 type InspirationProps = {}
@@ -148,7 +148,7 @@ const Inspiration: React.FC<InspirationProps> = () => {
               )
             })}
           </div>
-          <Comment title="灵感" />
+          {/* <Comment title="灵感" /> */}
         </div>
       )}
     </div>

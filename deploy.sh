@@ -10,14 +10,14 @@ npm run build
 cd build
 
 # 部署到自定义域名，没有自定义域名可注释掉
-echo 'chanshiyu.com' > CNAME
+echo 'blog.celestial-cosmic.top' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>.github.io
-git push -f git@github.com:chanshiyucx/chanshiyucx.github.io.git master
+git push -f git@github.com:CelestialCosmic/CelestialCosmic.github.io.git master
 
 cd -
 

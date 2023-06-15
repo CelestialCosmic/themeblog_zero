@@ -1,6 +1,6 @@
-.info p {
+/* .info p {
   @apply block leading-7;
-}
+} */
 
 .friends li {
   will-change: transform;

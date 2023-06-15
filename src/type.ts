@@ -66,7 +66,7 @@ export type Hot = {
   [key: number]: number
 }
 
-export type ThemeType = 'Hutao' | 'Keqing' | 'Ganyu' | 'Beelzebul' | 'Ayaka' | 'Yoimiya' | 'Kokomi' | 'Nahida'
+export type ThemeType =  'white' | 'black'
 
 export type Theme = {
   type: ThemeType
