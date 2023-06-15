@@ -17,13 +17,13 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <div className="header relative px-6 h-16 flex lg:hidden justify-between items-center shadow-sm z-10">
-      <h3 className="title text-4xl tracking-wider">蟬時雨</h3>
+      <h3 className="title text-4xl tracking-wider">繁星集</h3>
 
       <nav className={clsx('nav hidden sm:flex items-center', open && 'nav-over')}>
         <Link className={clsx(pathname === '/' && 'active')} to="/">
           <Home /> 首页
         </Link>
-        <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration">
+        {/* <Link className={clsx(pathname === '/inspiration' && 'active')} to="/inspiration">
           <Message /> 灵感
         </Link>
         <Link className={clsx(pathname === '/project' && 'active')} to="/project">
@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = () => {
         </Link>
         <Link className={clsx(pathname === '/book' && 'active')} to="/book">
           <Book /> 书单
-        </Link>
+        </Link> */}
         <Link className={clsx(pathname === '/friend' && 'active')} to="/friend">
           <Heart /> 友邻
         </Link>
