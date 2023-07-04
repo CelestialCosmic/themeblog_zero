@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useActivate, useUnactivate } from 'react-activation'
 import clsx from 'clsx'
 import AOS from 'aos'
-import { Issue, Hot } from '@/type'
-import { queryArchive, queryHot } from '@utils/service'
+import { Issue } from '@/type'
+import { queryArchive } from '@utils/service'
 import { formatIssue } from '@utils/format'
 import { useLoading } from '@/utils/hook'
 import Loading from '@components/Loading'
 import Markdown from '@/components/Markdown'
-import { Calendar, Bookmark, Tag, Eye } from '@components/Icons'
+import { Calendar,Tag} from '@components/Icons'
 import styles from './index.module.css'
 
 type HomeProps = {}
@@ -19,7 +19,7 @@ const Home: React.FC<HomeProps> = () => {
   const loading = useLoading()
   const [page, setPage] = useState(1)
   const [issues, setIssues] = useState<Issue[]>([])
-  const [hot, setHot] = useState<Hot>({})
+  // const [hot, setHot] = useState<Hot>({})
   const maskRef = useRef<HTMLDivElement>(null)
   const listRef = useRef<HTMLDivElement>(null)
   const hoverRef = useRef<any>(null)
@@ -42,10 +42,10 @@ const Home: React.FC<HomeProps> = () => {
           data = data.map(formatIssue)
           setIssues([...issues, ...data])
 
-          const ids = data.map((s) => s.id)
-          queryHot(ids).then((h) => {
-            setHot({ ...hot, ...h })
-          })
+          // const ids = data.map((s) => s.id)
+          // queryHot(ids).then((h) => {
+          //   setHot({ ...hot, ...h })
+          // })
         } else {
           finishedRef.current = true
         }
@@ -165,10 +165,10 @@ const Home: React.FC<HomeProps> = () => {
                   <div className={clsx('flex justify-start mt-2 w-fit', styles.meta)}>
                     <Calendar className="mr-0.5" />
                     {issue.created_at}
-                    <Eye className="ml-1 sm:ml-4 mr-0.5" />
-                    {hot[issue.id] || 0}℃
-                    <Bookmark className="ml-1 sm:ml-4 mr-0.5" />
-                    {issue.milestone ? issue.milestone.title : '未分类'}
+                    {/* <Eye className="ml-1 sm:ml-4 mr-0.5" />
+                    {hot[issue.id] || 0}℃ */}
+                    {/* <Bookmark className="ml-1 sm:ml-4 mr-0.5" />
+                    {issue.milestone ? issue.milestone.title : '未分类'} */}
                     <Tag className="ml-1 sm:ml-4 mr-0.5" />
                     {issue.labels.map((label) => (
                       <span className="ml-1 mr-2" key={label.id}>

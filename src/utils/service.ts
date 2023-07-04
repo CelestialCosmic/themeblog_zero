@@ -1,5 +1,5 @@
 import AV from 'leancloud-storage'
-import { Cloud, Issue, QueryParams, IssueLabel, Hot } from '@/type'
+import { Cloud, Issue, QueryParams, IssueLabel} from '@/type'
 import config from '@/config'
 
 const GITHUB_API = 'https://api.github.com/repos'
@@ -68,61 +68,61 @@ export const queryCloud = async (): Promise<Cloud> => {
   }
 }
 
-export const queryHot = async (ids: number[]): Promise<any> => {
-  return new Promise((resolve) => {
-    if (isDev) return resolve([])
-    const query = new AV.Query('Counter')
-    query.containedIn('id', ids)
-    query
-      .find()
-      .then((res: any) => {
-        const hot: Hot = {}
-        res.forEach((o: any) => {
-          const attributes = o.toJSON()
-          hot[attributes['id']] = attributes['time']
-        })
-        resolve(hot)
-      })
-      .catch(console.error)
-  }).catch(console.error)
-}
-
-export const increaseHot = (id: number, title: string): Promise<any> => {
-  return new Promise((resolve) => {
-    if (isDev) return resolve(1)
-    const query = new AV.Query('Counter')
-    const Counter = AV.Object.extend('Counter')
-    query.equalTo('id', id)
-    query
-      .find()
-      .then((res: any) => {
-        if (res.length > 0) {
-          // 已存在则返回热度
-          const counter = res[0] as any
-          counter
-            .increment('time', 1)
-            .save(null, { fetchWhenSave: true })
-            .then((counter: any) => {
-              const time = counter.get('time')
-              resolve(time)
-            })
-            .catch(console.error)
-        } else {
-          // 不存在则新建
-          const newcounter = new Counter()
-          newcounter.set('title', title)
-          newcounter.set('id', id)
-          newcounter.set('time', 1)
-          newcounter.set('site', window.location.href)
-          newcounter
-            .save()
-            .then(() => resolve(1))
-            .catch(console.error)
-        }
-      })
-      .catch(console.error)
-  }).catch(console.error)
-}
+// export const queryHot = async (ids: number[]): Promise<any> => {
+//   return new Promise((resolve) => {
+//     if (isDev) return resolve([])
+//     const query = new AV.Query('Counter')
+//     query.containedIn('id', ids)
+//     query
+//       .find()
+//       .then((res: any) => {
+//         const hot: Hot = {}
+//         res.forEach((o: any) => {
+//           const attributes = o.toJSON()
+//           hot[attributes['id']] = attributes['time']
+//         })
+//         resolve(hot)
+//       })
+//       .catch(console.error)
+//   }).catch(console.error)
+// }
+// //TODO 取消热度
+// export const increaseHot = (id: number, title: string): Promise<any> => {
+//   return new Promise((resolve) => {
+//     if (isDev) return resolve(1)
+//     const query = new AV.Query('Counter')
+//     const Counter = AV.Object.extend('Counter')
+//     query.equalTo('id', id)
+//     query
+//       .find()
+//       .then((res: any) => {
+//         if (res.length > 0) {
+//           // 已存在则返回热度
+//           const counter = res[0] as any
+//           counter
+//             .increment('time', 1)
+//             .save(null, { fetchWhenSave: true })
+//             .then((counter: any) => {
+//               const time = counter.get('time')
+//               resolve(time)
+//             })
+//             .catch(console.error)
+//         } else {
+//           // 不存在则新建
+//           const newcounter = new Counter()
+//           newcounter.set('title', title)
+//           newcounter.set('id', id)
+//           newcounter.set('time', 1)
+//           newcounter.set('site', window.location.href)
+//           newcounter
+//             .save()
+//             .then(() => resolve(1))
+//             .catch(console.error)
+//         }
+//       })
+//       .catch(console.error)
+//   }).catch(console.error)
+// }
 
 export const visitorStatistics = async (referrer: string): Promise<void> => {
   return new Promise<void>((resolve) => {

@@ -43,6 +43,7 @@ const Panel: React.FC<PanelProps> = ({ likeSite, likeCount, list, theme, toggleP
                         backgroundColor: color(t.color).alpha(0.3).string(),
                       }}
                     >
+                      <img src='../../../assets/images/lily.jpg' width={200} height={170}></img>
                       {t.name}
                     </span>
                   </li>
